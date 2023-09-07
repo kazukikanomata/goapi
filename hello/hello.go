@@ -2,6 +2,7 @@ package hello
 
 import (
 	"log"
+
 	"local.package/greetings"
 )
 
