@@ -1,6 +1,6 @@
 module local.package/hello
 
-go 1.20
+go 1.21.1
 
 replace local.package/greetings => ../greetings
 
