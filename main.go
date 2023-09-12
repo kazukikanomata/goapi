@@ -2,21 +2,23 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"os"
-
-	"local.package/abc"
-	"local.package/disney"
-	"local.package/hello"
 )
+
 func getArgument() {
 	fmt.Println(os.Args)
 }
 
 func main() {
-	message := hello.Hello("ポカホンタス")
-	fmt.Println(message)
-	abc.Hello()
-	disney.Disney()
-	getArgument()
-	fmt.Println(os.Args)
+	//  エンドポイントを作成する
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		// fmt.Fprintf: 書き込み先を指定する。ResponseWriter
+		fmt.Fprintf(w, "Hello World!")
+	})
+	fmt.Println("サーバー起動！")
+	err := http.ListenAndServe(":8081", nil)
+	if err != nil {
+		panic(err)
+	}
 }
