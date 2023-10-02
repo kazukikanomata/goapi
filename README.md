@@ -122,7 +122,7 @@ or
 ### go get
 githubにある自分で作った別のリポジトリとか、野良リポジトリ使うときは、go get使って持ってきたら良さそう。バージョン指定するときは、@のあとにlatestとかタグとかコミットのハッシュ値をつける。
 
-`$ go get github.com/hoge/fuga@latest``
+`$ go get github.com/hoge/fuga@latest`
 
 ### go mod tidy
 これ打つと、go.sumってファイルができて、パッケージのインストールをいい感じにしてくれる。importしてるやつをとってきてくれてそう。不要なやつも取り除いてくれる。
